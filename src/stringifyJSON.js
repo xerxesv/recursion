@@ -29,7 +29,7 @@ var stringifyJSON = function(obj) {
 	  else {
 		  console.dir(obj);
 		  var validKeys = Object.keys(obj).filter(function(key){
-			 return key !== undefined && typeof key !== "function" 
+			 return obj[key] !== undefined && typeof obj[key] !== "function" 
 		  });
 		  var objStr = "{";
 		  
@@ -38,7 +38,7 @@ var stringifyJSON = function(obj) {
 				  if(index < keys.length - 1) objStr += ",";
 			});
 		  objStr += "}";
-		  console.log(objStr);
+		  
 		  return objStr;
 	  } 
   }
